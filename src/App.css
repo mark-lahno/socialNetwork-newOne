@@ -10,22 +10,7 @@
   grid-template-columns: 2fr 10fr;
 }
 
-.header {
-  grid-area: h;
-  margin-bottom: 10px;
-  background-color: green;
-}
-
-.header img {
-  width: 20px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: burlywood;
-}
-
-.content {
+.app-wrapper-content {
   grid-area: c;
   margin-left: 10px;
   background-color: cornflowerblue;

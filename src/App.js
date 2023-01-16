@@ -1,42 +1,32 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+import Dialogs from './components/Dialogs/Dialogs';
+import Music from './components/Music/Music';
+import News from './components/News/News';
+import Settings from './components/Settings/Settings';
+
 
 const App = () => {
   return (
-    <div className='app-wrapper'>
-      <header className='header'>
-        <img src='https://www.thehoth.com/wp-content/uploads/2018/06/1a.png' />
-      </header>
-      <nav className='nav'>
-        <div>Profile</div>
-        <div>Messages</div>
-        <div>News</div>
-        <div>Music</div>
-        <div>Settings</div>
-      </nav>
-      <div className='content'>
-        <div>
-          <img src='https://c0.wallpaperflare.com/preview/282/489/126/beach-exotic-holiday-horizon.jpg' />
-        </div>
-        <div>
-          ava + description
-        </div>
-        <div>
-          My posts
-          <div>
-            New Post
-          </div>
-          <div>
-            <div>
-              Post 1
-            </div>
-            <div>
-              Post 2
-            </div>
-          </div>
+    <BrowserRouter>
+      <div className='app-wrapper'>
+        <Header />
+        <Navbar />
+        <div className='app-wrapper-content'>
+          <Routes>
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/dialogs' element={<Dialogs />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
         </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
